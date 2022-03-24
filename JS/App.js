@@ -1,7 +1,7 @@
 // Eventos DOM (Document Object Model)
 document
 .getElementById ("formulario-producto")
-.addEventlistener("submit", function (e) {
+.addEventListener("submit", function(evento) {
     //evaluar el comportamiento del formulario
     evento.preventDefault();//guarda y refresca la pantalla al memonto de un cambio
     //obtener los valores del formulario
@@ -9,7 +9,7 @@ document
     precio = document.getElementById ("precio").value,
     año = document.getElementById("año").value;    
     //Crear un nuevo objeto "producto"
-    const product = new Product (nombre, precio, año); 
+    const producto = new Producto (nombre, precio, año); 
     //Crear un nuevo usuario de interfaz
     const ui = new UI();
     //Input de validacion de usuario
@@ -50,7 +50,7 @@ class UI{
         </div>
     </div>
     `;
-    productolista.appendChild(element); // appendChild = objeto hijo
+    productolista.appendChild(elemento); // appendChild = objeto hijo
 }
     //resetear valores de formulario
     resetForm() {
@@ -58,7 +58,7 @@ class UI{
     }
     deleteProducto(elemento) {
         if (elemento.nombre === "eliminar"){
-            element.parentElement.parentElement.remove();
+            elemento.parentElement.parentElement.remove();
             this.showMessage("El producto se a eliminado")
         }
     }
@@ -73,8 +73,8 @@ class UI{
         const app = document.querySelector("#App");
 
         //Insertar mensaje en el interfaz usuario
-        setTimeout (function () {
-            document.queryselector (".alert").remove();
-         }, 3000);
+        setTimeout(function(){
+                document.querySelector(".alert", remove());
+            },3000);
         }
 }
